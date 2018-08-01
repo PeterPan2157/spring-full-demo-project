@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>web-demo</groupId>
+		<artifactId>spring-demo-web-project</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>test-demo</groupId>
+	<artifactId>spring-web-test</artifactId>
+	<version>{test.version}</version>
+	<packaging>war</packaging>
+	<name>spring-web-test Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>test-demo</groupId>
+			<artifactId>spring-interfaces-test</artifactId>
+			<version>{test.version}</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>spring-web-test</finalName>
+	</build>
+</project>
