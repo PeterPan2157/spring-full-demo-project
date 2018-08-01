@@ -20,6 +20,11 @@
 	<dependencies>
 		<dependency>
 			<groupId>test-demo</groupId>
+			<artifactId>spring-interfaces-test</artifactId>
+			<version>{test.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>test-demo</groupId>
 			<artifactId>spring-dao-test</artifactId>
 			<version>{test.version}</version>
 		</dependency>

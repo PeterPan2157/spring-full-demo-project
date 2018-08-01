@@ -17,11 +17,4 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>test-demo</groupId>
-			<artifactId>spring-services-test</artifactId>
-			<version>{test.version}</version>
-		</dependency>
-	</dependencies>
 </project>
