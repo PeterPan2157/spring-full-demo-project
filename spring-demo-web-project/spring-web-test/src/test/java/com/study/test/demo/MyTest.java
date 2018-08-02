@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.study.test.bean.CollectionBean;
 import com.study.test.bean.User;
 
 public class MyTest {
@@ -27,5 +28,8 @@ public class MyTest {
 		System.out.println("user6 = " + user6);
 		System.out.println("user7 = " + user7);
 		System.out.println("user8 = " + user8);
+		
+		CollectionBean collectionBean = (CollectionBean) ac.getBean("collectionBean");
+		System.out.println("collectionBean = " + collectionBean);
 	}
 }

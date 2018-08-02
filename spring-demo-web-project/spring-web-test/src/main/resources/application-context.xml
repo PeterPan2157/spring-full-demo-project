@@ -49,4 +49,41 @@
 		<constructor-arg name="age" value="18" index="1" type="java.lang.Integer"/>
 		<constructor-arg name="car" ref="car" index="2" type="com.study.test.bean.Car"/>
 	</bean>
+	
+	<bean name="collectionBean" class="com.study.test.bean.CollectionBean">
+		<!-- 如果数组中只准备一个值（对象），直接使用value|ref即可 -->
+		<!-- 对象中数组名为arr -->
+		<!-- <property name="arr" value="Tom"></property> -->
+		<property name="arr">
+			<array>
+				<value>tom</value>
+				<value>jerry</value>
+				<ref bean="car" />
+			</array>
+		</property>
+		<!-- 如果list中只准备一个值（对象），直接使用value|ref即可 -->
+		<!-- <property name="list" value="Tom"></property> -->
+		<property name="list">
+			<list>
+				<value>tom</value>
+				<value>Jerry</value>
+				<ref bean="car" />
+			</list>
+		</property>
+		<property name="map">
+			<map>
+				<entry key="1" value="abc"></entry>
+				<entry key="2" value="def"></entry>
+				<entry key-ref="car" value-ref="car"></entry>
+			</map>
+		</property>
+		<property name="prop">
+			<props>
+				<prop key="abc">abc</prop>
+				<prop key="def">def</prop>
+				<prop key="ghi">ghi</prop>
+			</props>
+		</property>
+	</bean>
+	
 </beans>
