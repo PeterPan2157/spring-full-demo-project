@@ -3,5 +3,50 @@
 	xmlns="http://www.springframework.org/schema/beans"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd ">
 	<!--将User对象交给spring容器管理 ，其中name任意，class为全包名 -->
-	<bean name="user" class="com.study.test.bean.User"/>
+
+	<!--创建方式1：空参构造创建 -->
+	<bean name="user1" class="com.study.test.bean.User"/>
+	
+	<!--创建方式2：静态工厂创建方式  调用UserFactory的createUser1方法创建名为user2的对象，放入容器 -->
+	<bean name="user2" class="com.study.test.bean.UserFactory" factory-method="createUser1" />
+	
+	<!--创建方式3：实例工厂创建 调用UserFactory对象的createUser2方法创建名为user3的对象，放入容器 -->
+	<bean name="user3" factory-bean="userFactory" factory-method="createUser2"></bean>
+	<bean name="userFactory" class="com.study.test.bean.UserFactory"></bean>
+	
+	<!--单例 -->
+	<bean name="user4" class="com.study.test.bean.User" scope="singleton"/>
+	
+	<!--多例 -->
+	<bean name="user5" class="com.study.test.bean.User" scope="property"/>
+	
+    <!-- 
+	    init-method：配置一个方法作为生命周期初始化方法.spring会在对象创建之后立即调用.
+	    destory-method：配置一个方法作为生命周期的销毁方法.spring容器在关闭并销毁所有容器中的对象之前调用. 
+    -->
+	<bean name="user6" class="com.study.test.bean.User" init-method="init" destroy-method="destroy" />
+
+	<bean name="user7" class="com.study.test.bean.User">
+		<!--值类型注入：为User对象中名为name的属性注入tom作为值 -->
+		<property name="name" value="tom"/>
+		<property name="age" value="18"/>
+		<!--引用类型注入：为car属性注入下方配置的car对象 car是user中一个对象 -->
+		<property name="car" ref="car"/>
+	</bean>
+	<!--将car对象配置到容器中 -->
+	<bean name="car" class="com.study.test.bean.Car">
+		<property name="name" value="兰博基尼"/>
+		<property name="color" value="黄色"/>
+	</bean>
+
+	<!-- 这里有个地方需要注意，如果构造方法与下方的配置参数不匹配（即没有只包含配置参数的构造方法），会导致创建类失败 -->
+	<bean name="user8" class="com.study.test.bean.User">
+		<!-- name属性：构造函数参数名 -->
+		<!-- index属性：构造函数参数索引 -->
+		<!-- type属性：构造函数参数类型 -->
+		<!-- 上述三个属性不必全部出现，根据情况选择即可 -->
+		<constructor-arg name="name" value="Jerry" index="0" type="java.lang.String"/>
+		<constructor-arg name="age" value="18" index="1" type="java.lang.Integer"/>
+		<constructor-arg name="car" ref="car" index="2" type="com.study.test.bean.Car"/>
+	</bean>
 </beans>

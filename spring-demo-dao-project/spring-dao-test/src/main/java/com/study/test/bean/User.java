@@ -3,6 +3,7 @@ package com.study.test.bean;
 public class User {
 	private String name;
 	private Integer age;
+	private Car car;
 
 	public String getName() {
 		return name;
@@ -20,13 +21,38 @@ public class User {
 		this.age = age;
 	}
 
-	public User() {
-		super();
+	public Car getCar() {
+		return car;
 	}
 
-	public User(String name, Integer age) {
+	public void setCar(Car car) {
+		this.car = car;
+	}
+
+	public User() {
+		super();
+		System.out.println("构造方法创建User---空构造方法");
+	}
+
+	public User(String name, Integer age, Car car) {
 		super();
 		this.name = name;
 		this.age = age;
+		this.car = car;
+		System.out.println("构造方法创建User---带参构造方法");
+	}
+
+	// 并在User中实现此方法
+	public void init() {
+		System.out.println("初始化");
+	}
+
+	public void destroy() {
+		System.out.println("销毁");
+	}
+
+	@Override
+	public String toString() {
+		return "User [name=" + name + ", age=" + age + ", car=" + car + "]";
 	}
 }
