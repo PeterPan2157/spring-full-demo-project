@@ -1,5 +1,8 @@
 package com.study.test.bean;
 
+import org.springframework.stereotype.Repository;
+
+@Repository("user")
 public class User {
 	private String name;
 	private Integer age;

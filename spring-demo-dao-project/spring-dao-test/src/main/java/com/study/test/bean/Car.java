@@ -1,5 +1,8 @@
 package com.study.test.bean;
 
+import org.springframework.stereotype.Repository;
+
+@Repository("car")
 public class Car {
 	private String name;
 	private String color;

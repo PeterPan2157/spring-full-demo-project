@@ -1,5 +1,8 @@
 package com.study.test.bean;
 
+import org.springframework.stereotype.Repository;
+
+@Repository("userFactory")
 public class UserFactory {
 	public static User createUser1() {
 		System.out.println("静态工厂创建User");// 表示由用户自己创建
@@ -10,4 +13,10 @@ public class UserFactory {
 		System.out.println("实例工厂创建User");
 		return new User();
 	}
+
+	@Override
+	public String toString() {
+		return "UserFactory []";
+	}
+
 }

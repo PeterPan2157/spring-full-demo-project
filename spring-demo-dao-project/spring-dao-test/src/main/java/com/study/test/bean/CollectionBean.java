@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
+import org.springframework.stereotype.Repository;
+
+@Repository("collectionBean")
 public class CollectionBean {
 	private Object[] arr;// 数组类型注入
 	private List<Object> list;// list/set类型注入
