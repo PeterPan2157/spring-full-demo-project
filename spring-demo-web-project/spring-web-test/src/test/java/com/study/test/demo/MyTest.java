@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.study.test.bean.Car;
 import com.study.test.bean.CollectionBean;
 import com.study.test.bean.User;
 import com.study.test.bean.UserFactory;
@@ -21,8 +20,8 @@ public class MyTest {
 		// User user6 = (User) ac.getBean("user6");
 		// User user7 = (User) ac.getBean("user7");
 		// User user8 = (User) ac.getBean("user8");
-		User user9 = (User) ac.getBean("user");
-		Car car = (Car) ac.getBean("car");
+		// User user9 = (User) ac.getBean("user");
+		// Car car = (Car) ac.getBean("car");
 		UserFactory userFactory = (UserFactory) ac.getBean("userFactory");
 		CollectionBean collectionBean = (CollectionBean) ac.getBean("collectionBean");
 		// 3.打印user对象
@@ -32,9 +31,13 @@ public class MyTest {
 		// System.out.println("user6 = " + user6);
 		// System.out.println("user7 = " + user7);
 		// System.out.println("user8 = " + user8);
-		System.out.println("user9 = " + user9);
-		System.out.println("car = " + car);
+		// System.out.println("user9 = " + user9);
+		// System.out.println("car = " + car);
 		System.out.println("userFactory = " + userFactory);
+		System.out.println("userFactory-createUser1 = " + UserFactory.createUser1());
+		User user = userFactory.createUser2();
+		user.toString();
+		System.out.println("userFactory-createUser2 = " + userFactory.createUser2());
 		System.out.println("collectionBean = " + collectionBean);
 	}
 }

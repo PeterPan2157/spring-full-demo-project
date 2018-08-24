@@ -1,8 +1,8 @@
 package com.study.test.bean;
 
-import org.springframework.stereotype.Repository;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
-@Repository("user")
 public class User {
 	private String name;
 	private Integer age;
@@ -46,10 +46,12 @@ public class User {
 	}
 
 	// 并在User中实现此方法
+	@PostConstruct // 在对象被创建之后调用，init-method
 	public void init() {
 		System.out.println("初始化");
 	}
 
+	@PreDestroy // 在对象销毁之前调用，destroy-method
 	public void destroy() {
 		System.out.println("销毁");
 	}

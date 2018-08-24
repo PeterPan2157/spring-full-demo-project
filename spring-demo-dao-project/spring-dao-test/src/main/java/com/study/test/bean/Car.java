@@ -1,9 +1,9 @@
 package com.study.test.bean;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.beans.factory.annotation.Value;
 
-@Repository("car")
 public class Car {
+	@Value("法拉利")
 	private String name;
 	private String color;
 

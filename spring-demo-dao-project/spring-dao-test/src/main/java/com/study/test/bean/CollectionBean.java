@@ -7,7 +7,7 @@ import java.util.Properties;
 
 import org.springframework.stereotype.Repository;
 
-@Repository("collectionBean")
+@Repository
 public class CollectionBean {
 	private Object[] arr;// 数组类型注入
 	private List<Object> list;// list/set类型注入
