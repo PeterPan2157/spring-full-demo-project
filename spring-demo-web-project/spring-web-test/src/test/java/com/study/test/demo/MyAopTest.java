@@ -12,17 +12,17 @@ import com.study.test.interfaces.UserInterface;
 //创建容器
 @RunWith(SpringJUnit4ClassRunner.class)
 //指定容器使用配置文件
-@ContextConfiguration("classpath:application-context-1.xml")
+@ContextConfiguration("classpath:application-context-2.xml")
 public class MyAopTest {
 
   //将名为user的对象注入u变量中
-  @Resource(name="userInterfaceImpl")
-  private UserInterface us;
+  @Resource
+  private UserInterface userInterfaceImpl;
 
   @Test
   public void fun1() {
 
-      System.out.println(us);
-      us.save();
+      System.out.println(userInterfaceImpl);
+      userInterfaceImpl.save();
   }
 }

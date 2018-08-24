@@ -1,7 +1,9 @@
 package com.study.test.impl;
 
-import com.study.test.interfaces.UserInterface;
+import org.springframework.stereotype.Service;
 
+import com.study.test.interfaces.UserInterface;
+@Service
 public class UserInterfaceImpl implements UserInterface {
 	@Override
 	public void save() {
