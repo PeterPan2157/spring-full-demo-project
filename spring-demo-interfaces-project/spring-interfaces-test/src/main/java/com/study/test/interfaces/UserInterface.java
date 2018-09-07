@@ -1,13 +1,21 @@
 package com.study.test.interfaces;
 
+import java.util.List;
+
+import com.study.test.bean.User;
+
 public interface UserInterface {
 
-	void save();
+	void save(User user);
 
-	void delete();
+	void delete(Integer id);
 
-	void update();
+	void update(User user);
 
-	void find();
+	User getById(Integer id);
+
+	int getTotalCount();
+
+	List<User> getAll();
 
 }

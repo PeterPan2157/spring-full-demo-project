@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.study.test.bean.User;
 import com.study.test.interfaces.UserInterface;
 
 //创建容器
@@ -23,6 +24,10 @@ public class MyAopTest {
   public void fun1() {
 
       System.out.println(userInterfaceImpl);
-      userInterfaceImpl.save();
+//      userInterfaceImpl.save(new User());
+      
+      User u=new User();
+      u.setName("Jerry");
+      userInterfaceImpl.save(u);
   }
 }
